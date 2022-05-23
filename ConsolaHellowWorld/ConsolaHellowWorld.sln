@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32516.85
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsolaHellowWorld", "ConsolaHellowWorld.csproj", "{22CD8405-9345-4ABC-860C-912822CD68CE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{22CD8405-9345-4ABC-860C-912822CD68CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22CD8405-9345-4ABC-860C-912822CD68CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22CD8405-9345-4ABC-860C-912822CD68CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22CD8405-9345-4ABC-860C-912822CD68CE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1AE89D97-4E56-4115-8151-DA4D788E4FF6}
+	EndGlobalSection
+EndGlobal
