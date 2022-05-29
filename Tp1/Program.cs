@@ -86,16 +86,27 @@ namespace Tp1
                 Console.Clear();
                 Console.WriteLine("Ingrese cantidad de pasajeros entre 1 y 100");
                 Console.Write("-> ");
-                opcion = Convert.ToInt32(Console.ReadLine());
-                if (!ValidarCantidadPasajeros("Omnibus", opcion))
+                try
                 {
-                    Console.WriteLine("Cantidad erronea");
+                    opcion = int.Parse(Console.ReadLine());
+                    if (!ValidarCantidadPasajeros("Omnibus", opcion))
+                    {
+                        Console.WriteLine("Cantidad erronea");
+                        Console.ReadLine();
+                        continue;
+                    }
+                    listaVehiculos.Add(new Omnibus(patente, opcion));
+                    Console.WriteLine("Omnibus ingresado con éxito");
+                    Console.ReadLine();
+                    break;
+                }
+                catch(FormatException e)
+                {
+                    Console.WriteLine("valor erroneo, por favor, ingrese un valor numérico");
+                    Console.ReadLine();
                     continue;
                 }
-                listaVehiculos.Add(new Omnibus(patente, opcion));
-                Console.WriteLine("Omnibus ingresado con éxito");
-                Console.ReadLine();
-                break;
+
             } while (true);
         }
         private static void CrearTaxi()
@@ -107,16 +118,27 @@ namespace Tp1
                 Console.Clear();
                 Console.WriteLine("Ingrese cantidad de pasajeros entre 1 y 4");
                 Console.Write("-> ");
-                opcion = Convert.ToInt32(Console.ReadLine());
-                if (!ValidarCantidadPasajeros("Taxi", opcion))
+                try
                 {
-                    Console.WriteLine("Cantidad erronea");
+                    opcion = int.Parse(Console.ReadLine());
+                    if (!ValidarCantidadPasajeros("Taxi", opcion))
+                    {
+                        Console.WriteLine("Cantidad erronea");
+                        Console.ReadLine();
+                        continue;
+                    }
+                    listaVehiculos.Add(new Taxi(patente, opcion));
+                    Console.WriteLine("Taxi ingresado con éxito");
+                    Console.ReadLine();
+                    break;
+                }
+                catch(FormatException e)
+                {
+                    Console.WriteLine("valor erroneo, por favor, ingrese un valor numérico");
+                    Console.ReadLine();
                     continue;
                 }
-                listaVehiculos.Add(new Taxi(patente, opcion));
-                Console.WriteLine("Taxi ingresado con éxito");
-                Console.ReadLine();
-                break;
+
             } while (true);
         }
         #endregion
@@ -169,15 +191,24 @@ namespace Tp1
                     transporte.Info();
                     Console.WriteLine("Ingrese cantidad de pasajeros");
                     Console.Write("-->");
-                    pasajeros = Convert.ToInt32(Console.ReadLine());
-                    if (!ValidarCantidadPasajeros(transporte.tipo, pasajeros))
+                    try
                     {
-                        Console.WriteLine("Cantidad de pasajeros fuera del rango");
+                        pasajeros = Convert.ToInt32(Console.ReadLine());
+                        if (!ValidarCantidadPasajeros(transporte.tipo, pasajeros))
+                        {
+                            Console.WriteLine("Cantidad de pasajeros fuera del rango");
+                            Console.ReadLine();
+                            continue;
+                        }
+                        transporte.pasajeros = pasajeros;
+                        listaVehiculos.Add(transporte);
+                    }
+                    catch(FormatException e)
+                    {
+                        Console.WriteLine("valor erroneo, por favor, ingrese un valor numérico");
                         Console.ReadLine();
                         continue;
                     }
-                    transporte.pasajeros = pasajeros;
-                    listaVehiculos.Add(transporte);
 
                 } while (!ValidarCantidadPasajeros(transporte.tipo, pasajeros));
             } while (patente != "0");
