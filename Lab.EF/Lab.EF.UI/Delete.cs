@@ -1,6 +1,7 @@
 ﻿using Lab.EF.Logic;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,9 +20,16 @@ namespace Lab.EF.UI
                 EmployeesLogic employeesLogic = new EmployeesLogic();
                 employeesLogic.Delete(id);
             }
-            catch(Exception ex)
+            catch (DbUpdateException ex)
+            {
+                Console.WriteLine("El registro no se puede eliminar porque está ligado a una Compra.");
+            }
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+            }
+            finally
+            {
                 Console.ReadLine();
             }
         }
@@ -35,9 +43,16 @@ namespace Lab.EF.UI
                 ShippersLogic shippersLogic = new ShippersLogic();
                 shippersLogic.Delete(id);
             }
+            catch(DbUpdateException ex)
+            {
+                Console.WriteLine("El registro no se puede eliminar porque está ligado a una Compra.");
+            }
             catch(Exception ex)
             {
                 Console.WriteLine(ex.Message);
+            }
+            finally
+            {
                 Console.ReadLine();
             }
         }
