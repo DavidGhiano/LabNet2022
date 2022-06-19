@@ -1,0 +1,19 @@
+﻿@model Lab.TP6.MVC.Models.ShippersView
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Editar Compañia de Transporte</h2>
+@using (Html.BeginForm("Edit", "Shippers", FormMethod.Post))
+{
+    <label>Nombre: </label> @Html.TextBoxFor(s => s.CompanyName)
+    <br />
+    <span class="text-danger">@Html.ValidationMessage("CompanyName") </span>
+    <br />
+    <label>Telefono: </label> @Html.TextBoxFor(s => s.Telefono)
+    <br />
+    <span class="text-danger">@Html.ValidationMessage("Telefono") </span>
+    <br />
+    <input type="submit" class="btn btn-success" value="Editar" />
+}

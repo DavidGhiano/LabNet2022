@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lab.EF.UI
+namespace Lab.TP7.UI
 {
     public class Menus
     {

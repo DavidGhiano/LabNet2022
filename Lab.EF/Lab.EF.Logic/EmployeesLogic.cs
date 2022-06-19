@@ -1,12 +1,12 @@
-﻿using Lab.EF.Data;
-using Lab.EF.Entities;
+﻿using Lab.TP7.Data;
+using Lab.TP7.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lab.EF.Logic
+namespace Lab.TP7.Logic
 {
     public class EmployeesLogic : BaseLogic, IABMLogic<Employees>
     {
@@ -18,14 +18,28 @@ namespace Lab.EF.Logic
 
         public void Delete(int id)
         {
-            var employees = context.Employees.Find(id);
-            context.Employees.Remove(employees);
-            context.SaveChanges();
+            try
+            {
+                var employees = context.Employees.Find(id);
+                context.Employees.Remove(employees);
+                context.SaveChanges();
+
+            }
+            catch (Exception Ex)
+            {
+
+                throw;
+            }
         }
 
         public List<Employees> GetAll()
         {
             return context.Employees.ToList();
+        }
+
+        public Employees GetOne(int id)
+        {
+            return context.Employees.First(e => e.EmployeeID == id);
         }
 
         public void Update(Employees objectUpdate)

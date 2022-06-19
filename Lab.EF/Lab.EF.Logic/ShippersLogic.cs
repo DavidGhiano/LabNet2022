@@ -1,12 +1,12 @@
-﻿using Lab.EF.Data;
-using Lab.EF.Entities;
+﻿using Lab.TP7.Data;
+using Lab.TP7.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lab.EF.Logic
+namespace Lab.TP7.Logic
 {
     public class ShippersLogic : BaseLogic, IABMLogic<Shippers>
     {
@@ -38,6 +38,11 @@ namespace Lab.EF.Logic
             shipperUpdate.Phone = shipper.Phone;
 
             context.SaveChanges();
+        }
+
+        public Shippers GetOne(int id)
+        {
+            return context.Shippers.First(s => s.ShipperID == id);
         }
     }
 }

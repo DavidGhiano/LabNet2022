@@ -59,13 +59,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Lab.EF.Data\Lab.EF.Data.csproj">
+    <ProjectReference Include="..\Lab.EF.Data\Lab.TP7.Data.csproj">
       <Project>{3E46FF6E-02B3-4729-82AD-5F395F10B0DC}</Project>
-      <Name>Lab.EF.Data</Name>
+      <Name>Lab.TP7.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Lab.EF.Entities\Lab.EF.Entities.csproj">
+    <ProjectReference Include="..\Lab.EF.Entities\Lab.TP7.Entities.csproj">
       <Project>{40A577D8-CE68-4A9F-965A-93E80B12E6E4}</Project>
-      <Name>Lab.EF.Entities</Name>
+      <Name>Lab.TP7.Entities</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

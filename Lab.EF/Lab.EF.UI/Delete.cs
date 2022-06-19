@@ -1,4 +1,4 @@
-﻿using Lab.EF.Logic;
+﻿using Lab.TP7.Logic;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Infrastructure;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lab.EF.UI
+namespace Lab.TP7.UI
 {
     public class Delete
     {

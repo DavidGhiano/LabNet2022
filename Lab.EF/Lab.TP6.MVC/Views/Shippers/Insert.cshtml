@@ -1,0 +1,21 @@
+﻿@model Lab.TP6.MVC.Models.ShippersView
+@{
+    ViewBag.Title = "Insert";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Agregar Compa{ia de Transporte</h2>
+
+@using (Html.BeginForm("Insert", "Shippers", FormMethod.Post))
+{
+    <label>Nombre: </label> @Html.TextBoxFor(s => s.CompanyName)
+    <br />
+    <span class="text-danger">@Html.ValidationMessage("Nombre") </span>
+    <br />
+    <label>Telefono: </label> @Html.TextBoxFor(s => s.Telefono, new { type= "tel" });
+    <br />
+    <span class="text-danger">@Html.ValidationMessage("Apellido") </span>
+    <br />
+
+    <input type="submit" class="btn btn-success" value="Guardar" />
+}

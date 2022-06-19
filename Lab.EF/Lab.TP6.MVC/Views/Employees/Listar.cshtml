@@ -1,0 +1,37 @@
+﻿@model List<Lab.TP6.MVC.Models.EmployeesView>
+@{
+    ViewBag.Title = "Listar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="panel panel-default my-3">
+    <div class="panel-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var item in Model)
+                {
+                    <tr>
+                        <td>@item.ID</td>
+                        <td>@item.Nombre</td>
+                        <td>@item.Apellido</td>
+                        <td>
+                            @Html.ActionLink("Editar", "Edit", new { id = item.ID }, "Employees") | 
+                            @Html.ActionLink("Borrar", "Delete", new { id = item.ID }, new { onclick = "return confirm('¿Está seguro de querer borrar?')" })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <div>
+            @Html.ActionLink("Insertar Nuevo Empleado", "Insert","Employees")
+        </div>
+    </div>
+</div>

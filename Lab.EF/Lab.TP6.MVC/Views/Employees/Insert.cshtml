@@ -1,0 +1,21 @@
+﻿@model Lab.TP6.MVC.Models.EmployeesView
+@{
+    ViewBag.Title = "Insert";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Agregar Empleado</h2>
+
+@using (Html.BeginForm("Insert", "Employees", FormMethod.Post))
+{
+    <label>Nombre: </label> @Html.TextBoxFor(e => e.Nombre)
+    <br />
+    <span class="text-danger">@Html.ValidationMessage("Nombre") </span>
+    <br />
+    <label>Apellido: </label> @Html.TextBoxFor(e => e.Apellido)
+    <br />
+    <span class="text-danger">@Html.ValidationMessage("Apellido") </span>
+    <br />
+
+    <input type="submit" class="btn btn-success" value="Guardar" />
+}
