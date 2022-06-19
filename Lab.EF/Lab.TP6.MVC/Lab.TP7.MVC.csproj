@@ -137,6 +137,7 @@
     </Compile>
     <Compile Include="Models\EmployeesView.cs" />
     <Compile Include="Models\ShippersView.cs" />
+    <Compile Include="Models\Validation\NoNumberSymbolAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
