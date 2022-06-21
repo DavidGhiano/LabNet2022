@@ -131,11 +131,13 @@
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PokemonController.cs" />
     <Compile Include="Controllers\ShippersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\EmployeesView.cs" />
+    <Compile Include="Models\Pokemon.cs" />
     <Compile Include="Models\ShippersView.cs" />
     <Compile Include="Models\Validation\NoNumberSymbolAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -149,6 +151,24 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Img\bug.png" />
+    <Content Include="Img\dark.png" />
+    <Content Include="Img\dragon.png" />
+    <Content Include="Img\electric.png" />
+    <Content Include="Img\fairy.png" />
+    <Content Include="Img\fighting.png" />
+    <Content Include="Img\fire.png" />
+    <Content Include="Img\flying.png" />
+    <Content Include="Img\ghost.png" />
+    <Content Include="Img\grass.png" />
+    <Content Include="Img\ground.png" />
+    <Content Include="Img\ice.png" />
+    <Content Include="Img\normal.png" />
+    <Content Include="Img\poison.png" />
+    <Content Include="Img\psychic.png" />
+    <Content Include="Img\rock.png" />
+    <Content Include="Img\steel.png" />
+    <Content Include="Img\water.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -183,10 +203,10 @@
     <Content Include="Views\Shippers\Listar.cshtml" />
     <Content Include="Views\Shippers\Insert.cshtml" />
     <Content Include="Views\Shippers\Edit.cshtml" />
+    <Content Include="Views\Pokemon\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Shipper\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

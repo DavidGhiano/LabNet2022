@@ -1,0 +1,91 @@
+﻿@model Lab.TP8.Api.Models.PokemonView
+@{
+    ViewBag.Title = "Index";
+    string hp = "width: " + ((Model.hp * 100) / 255) + "%";
+    string attack = "width: " + ((Model.attack * 100) / 255) + "%";
+    string defense = "width: " + ((Model.defense * 100) / 255) + "%";
+    string specialAttack = "width: " + ((Model.specialAttack * 100) / 255) + "%";
+    string specialDefense = "width: " + ((Model.specialDefense * 100) / 255) + "%";
+    string speed = "width: " + ((Model.speed * 100) / 255) + "%";
+}
+
+<div class="jumbotron">
+    <div class="pokemon">
+        <div class="imagen">
+            @if (Model.imagen != "" || Model.imagen != null)
+            {
+                <img src="@Model.imagen" alt="@Model.name" />
+            }
+        </div>
+        <div class="info">
+            <h2 class="text-center">@Model.name.ToUpper()</h2>
+            <div class="info-datos">
+                <div class="datos">
+                    <p>
+                        @foreach (var item in Model.types)
+                        {
+                            string imgLink = "/Img/" + item + ".png";
+
+                            <img class="tipo" src=@imgLink alt=@item />
+
+                        }
+                    </p>
+                    <p><strong>Nro Pokemon: </strong>@Model.id</p>
+                    <p><strong>Peso: </strong>@Model.weight Kg.</p>
+                    <p><strong>Altura: </strong>@Model.height Mts.</p>
+                </div>
+                <div class="stats">
+                    <h3>Estadística Base</h3>
+                    <h4>Vida</h4>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success progress-bar-striped active"
+                             style="@hp">
+                            <p>@Model.hp</p>
+                        </div>
+                    </div>
+                    <h4>Ataque</h4>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success progress-bar-striped active"
+                             style="@attack">
+                            <p>@Model.attack</p>
+                        </div>
+                    </div>
+                    <h4>Defensa</h4>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success progress-bar-striped active"
+                             style="@defense">
+                            <p>@Model.defense</p>
+                        </div>
+                    </div>
+                    <h4>Ataque Especial</h4>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success progress-bar-striped active"
+                             style="@specialAttack">
+                            <p>@Model.specialAttack</p>
+                        </div>
+                    </div>
+                    <h4>Defensa Especial</h4>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success progress-bar-striped active"
+                             style="@specialDefense">
+                            <p>@Model.specialDefense</p>
+                        </div>
+                    </div>
+                    <h4>Velocidad</h4>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success progress-bar-striped active"
+                             style="@speed">
+                            <p>@Model.speed</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+    <p><a class="btn btn-primary" href="/pokemon/index" role="button">Pokemon Aleatorio</a></p>
+    <small>(Solo pokemones hasta la tercera generación)</small>
+</div>
+

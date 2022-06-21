@@ -23,12 +23,21 @@ namespace Lab.TP7.Logic
             context.SaveChanges();
         }
 
-        public void Delete(int id)
+        public bool Delete(int id)
         {
-            var shipper = context.Shippers.Find(id);
+            try
+            {
+                var shipper = context.Shippers.Find(id);
 
-            context.Shippers.Remove(shipper);
-            context.SaveChanges();
+                context.Shippers.Remove(shipper);
+                context.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
         }
 
         public void Update(Shippers shipper)
@@ -42,7 +51,14 @@ namespace Lab.TP7.Logic
 
         public Shippers GetOne(int id)
         {
-            return context.Shippers.First(s => s.ShipperID == id);
+            try
+            {
+                return context.Shippers.First(s => s.ShipperID == id);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
     }
 }

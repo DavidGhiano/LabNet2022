@@ -23,6 +23,62 @@ textarea {
     max-width: 280px;
 }
 
-.text-danger{
+h3 {
+    margin-top: 0;
+}
+
+.btn{
+    display:block;
+    margin-top: 15px;
+}
+
+.text-danger {
     color: darkred;
+}
+
+.pokemon {
+    display: grid;
+    grid-template-columns: 1.2fr 4fr;
+}
+
+    .pokemon .imagen {
+        grid-column: 1/2;
+        margin: 10px;
+    }
+
+        .pokemon .imagen img {
+            width: 100%;
+        }
+
+    .pokemon .info {
+        grid-column: 2/3;
+        margin-left: 15px;
+    }
+
+        .pokemon .info .info-datos {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+        }
+
+            .pokemon .info .info-datos .datos {
+                grid-column: 1/2;
+            }
+
+            .pokemon .info .info-datos .stats {
+                grid-column: 2/3;
+            }
+
+                .pokemon .info .info-datos .stats h4 {
+                    margin-bottom: 0;
+                }
+
+                .pokemon .info .info-datos .stats p {
+                    font-size: 16px;
+                    margin-bottom: 0;
+                    color: black;
+                }
+
+.progress {
+    margin: 0;
+    height: 18px
 }

@@ -16,19 +16,18 @@ namespace Lab.TP7.Logic
             context.SaveChanges();
         }
 
-        public void Delete(int id)
+        public bool Delete(int id)
         {
             try
             {
                 var employees = context.Employees.Find(id);
                 context.Employees.Remove(employees);
                 context.SaveChanges();
-
+                return true;
             }
             catch (Exception Ex)
             {
-
-                throw;
+                return false;
             }
         }
 
@@ -39,7 +38,14 @@ namespace Lab.TP7.Logic
 
         public Employees GetOne(int id)
         {
-            return context.Employees.First(e => e.EmployeeID == id);
+            try
+            {
+                return context.Employees.First(e => e.EmployeeID == id);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
 
         public void Update(Employees objectUpdate)

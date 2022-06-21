@@ -14,7 +14,7 @@ namespace Lab.TP7.Logic
 
         void Add(T newObject);
 
-        void Delete(int id);
+        bool Delete(int id);
 
         void Update(T objectUpdate);
     }
