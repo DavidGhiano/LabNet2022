@@ -7,9 +7,11 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace Lab.TP8.Api.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class EmployeesController : ApiController
     {
         EmployeesLogic employeesLogic = new EmployeesLogic();
