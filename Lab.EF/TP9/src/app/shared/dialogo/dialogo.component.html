@@ -1,0 +1,20 @@
+<h2>¿Estás seguro? <mat-icon>sentiment_dissatisfied</mat-icon></h2>
+<hr>
+<p>
+    Está a punto de borrar a <strong>{{ data }}</strong>
+    <br>
+    ¿Desea continuar?
+</p>
+<div>
+    <button mat-raised-button
+            (click)="borrar()"
+            color="warn">
+                Si, borrar
+    </button>
+    <button mat-button
+            (click)="cerrar()"
+    >
+        Cancelar
+    </button>
+
+</div>

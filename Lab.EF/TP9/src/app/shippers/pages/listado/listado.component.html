@@ -1,0 +1,40 @@
+<h1 class="text-center">LISTADO de EMPRESAS de TRANSPORTE</h1>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    
+    <ng-container matColumnDef="ID">
+        <th mat-header-cell *matHeaderCellDef> ID </th>
+        <td mat-cell *matCellDef="let shippers"> {{shippers.ID}} </td>
+    </ng-container>
+    <ng-container matColumnDef="CompanyName">
+        <th mat-header-cell *matHeaderCellDef> Nombre de la Compañía </th>
+        <td mat-cell *matCellDef="let shippers"> {{shippers.CompanyName}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Telefono">
+        <th mat-header-cell *matHeaderCellDef> Telefono </th>
+        <td mat-cell *matCellDef="let shippers"> {{shippers.Telefono}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Acciones">
+        <th mat-header-cell *matHeaderCellDef> Acciones </th>
+        <td mat-cell *matCellDef="let shipper">
+            <button 
+                mat-raised-button 
+                color="primary"
+                class="mr-3"
+            >
+                <mat-icon>edit</mat-icon>
+                Editar
+            </button>
+            <button mat-raised-button 
+                    color="warn"
+                    (click)="borrar( shipper.CompanyName, shipper.ID )"
+            >
+                <mat-icon>delete</mat-icon>
+                Eliminar
+            </button>
+        </td>
+    </ng-container>
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>

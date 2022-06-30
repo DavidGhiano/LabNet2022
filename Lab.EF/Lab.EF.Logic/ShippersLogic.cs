@@ -16,11 +16,13 @@ namespace Lab.TP7.Logic
             return context.Shippers.ToList();
         }
 
-        public void Add(Shippers shippers)
+        public Shippers Add(Shippers shippers)
         {
             context.Shippers.Add(shippers);
 
             context.SaveChanges();
+
+            return context.Shippers.ToList().Last();
         }
 
         public bool Delete(int id)

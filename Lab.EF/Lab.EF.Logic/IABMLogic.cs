@@ -12,7 +12,7 @@ namespace Lab.TP7.Logic
 
         T GetOne(int id);
 
-        void Add(T newObject);
+        T Add(T newObject);
 
         bool Delete(int id);
 

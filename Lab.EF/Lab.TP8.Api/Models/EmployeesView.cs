@@ -14,12 +14,10 @@ namespace Lab.TP8.Api.Models
 
         [Required]
         [StringLength(20)]
-        [NoNumberSymbol]
         public string Apellido { get; set; }
 
         [Required]
         [StringLength(10)]
-        [NoNumberSymbol]
         public string Nombre { get; set; }
     }
 }

@@ -1,0 +1,46 @@
+<mat-card class="card">
+    <mat-card-header>
+        <mat-card-title>{{(employees.ID == 0)? 'Crear' : 'Editar' }} Empleados</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <form [formGroup]="form" (ngSubmit)="onGuardar($event)" autocomplete="off">
+            <p>
+                <mat-form-field appearance="outline">
+                    <mat-label>Nombre</mat-label>
+                    <input
+                        matInput
+                        type="text"
+                        formControlName="Nombre" 
+                        placeholder="Ej: Juan">
+                    <mat-error (*ngIf)="isValido('Nombre')">Campo requerido</mat-error>
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field appearance="outline">
+                    <mat-label>Apellido</mat-label>
+                    <input 
+                        matInput 
+                        type="text"
+                        formControlName="Apellido"
+                        placeholder="Ej: Pérez">
+                    <mat-error (*ngIf)="isValido('Apellido')">Campo requerido</mat-error>
+                </mat-form-field>
+            </p>
+            <p>
+                <input
+                    type="hidden"
+                    formControlName="ID"
+                />
+                <button
+                    type="submit"
+                    mat-raised-button
+                    color="primary"
+                >
+                <mat-icon>edit</mat-icon>
+                    {{(employees.ID == 0)? 'Crear' : 'Actualizar' }}
+                </button>
+            </p>
+        </form>
+    </mat-card-content>
+</mat-card>
+

@@ -1,0 +1,37 @@
+<mat-grid-list cols="2" rowHeight="1:1.2">
+  <mat-grid-tile>
+    <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title> <h2>Empleados</h2></mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="assets/img/employees.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <p>
+            Lista, Creación, Modificación de Empleados
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary" routerLink="employees/listado">Listado</button>
+          <button mat-raised-button color="warn" routerLink="employees/agregar">Crear</button>
+        </mat-card-actions>
+      </mat-card>
+  </mat-grid-tile>
+ 
+  <mat-grid-tile>
+    <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title> <h2>Transportes</h2></mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="assets/img/shippers.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <p>
+            Lista, Creación, Modificación de Transportes
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary" routerLink="shippers/listado">Listado</button>
+          <button mat-raised-button color="warn" routerLink="shippers/agregar">Crear</button>
+        </mat-card-actions>
+      </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

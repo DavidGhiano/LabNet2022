@@ -1,0 +1,40 @@
+<mat-card class="card">
+    <mat-card-header>
+        <mat-card-title>{{ (shipper.ID == 0)? 'Crear' : 'Editar'}} Transporte</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <form [formGroup]="form" 
+              (ngSubmit)="onGuardar()">
+            <p>
+                <mat-form-field appearance="outline">
+                    <mat-label>Nombre del Transporte</mat-label>
+                    <input type="text"
+                           matInput
+                           formControlName="CompanyName"
+                           placeholder="Ej: Correo Argentino">
+                    <mat-error (*ngIf)="isValido('CompanyName')">Campo Requerido</mat-error>
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field appearance="outline">
+                    <mat-label>Telefono</mat-label>
+                    <input type="text"
+                           matInput
+                           formControlName="Telefono"
+                           placeholder="Ej: 333 545 9999">
+                    <mat-error (*ngIf)="isValido('Telefono')">Campo Requerido</mat-error>
+                </mat-form-field>
+            </p>
+            <p>
+                <input type="hidden"
+                       formControlName="ID">
+                <button type="submit"
+                        mat-raised-button
+                        color="primary">
+                    <mat-icon>edit</mat-icon>
+                    {{ ( shipper.ID == 0 )? 'Crear' : 'Actualizar' }}
+                </button>
+            </p>
+        </form>
+    </mat-card-content>
+</mat-card>

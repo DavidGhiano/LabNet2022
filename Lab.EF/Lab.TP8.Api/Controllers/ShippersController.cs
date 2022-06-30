@@ -57,8 +57,8 @@ namespace Lab.TP8.Api.Controllers
                 CompanyName = shippersView.CompanyName,
                 Phone = shippersView.Telefono
             };
-            shippersLogic.Add(shippers);
-            return Ok("Agregado con éxito");
+            shippersView.ID = shippersLogic.Add(shippers).ShipperID;
+            return Ok(shippersView);
         }
 
         public IHttpActionResult PatchEdit(ShippersView shippersView)

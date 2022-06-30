@@ -63,8 +63,8 @@ namespace Lab.TP8.Api.Controllers
                 FirstName = employeesView.Nombre,
                 LastName = employeesView.Apellido
             };
-            employeesLogic.Add(employees);
-            return Ok("Agregado con éxito");
+            employeesView.ID = employeesLogic.Add(employees).EmployeeID;
+            return Ok(employeesView);
         }
 
         public IHttpActionResult PatchEdit(EmployeesView employeesView)

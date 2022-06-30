@@ -1,0 +1,38 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.spacio{
+    flex: 1 1 auto;
+}
+.mr-3{
+    margin: 0 1rem 0 0 !important;
+}
+.container{
+    margin: 0 auto;
+    width: 95%;
+    margin-top: 1.5rem;
+}
+
+.text-center{
+    text-align: center;
+}
+
+table{
+    width: 100%;
+}
+h1{
+    position: relative;
+}
+h1::after{
+    content: "";
+    background-color: #7b1fa2;
+    height:3px;
+    width: 300px;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}

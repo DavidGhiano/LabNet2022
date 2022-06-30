@@ -19,6 +19,7 @@ namespace Lab.TP8.Api
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
             config.EnableCors();
         }
     }

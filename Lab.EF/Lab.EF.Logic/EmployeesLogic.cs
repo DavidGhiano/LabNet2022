@@ -10,10 +10,11 @@ namespace Lab.TP7.Logic
 {
     public class EmployeesLogic : BaseLogic, IABMLogic<Employees>
     {
-        public void Add(Employees newObject)
+        public Employees Add(Employees newObject)
         {
             context.Employees.Add(newObject);
             context.SaveChanges();
+            return context.Employees.ToList().Last();
         }
 
         public bool Delete(int id)
